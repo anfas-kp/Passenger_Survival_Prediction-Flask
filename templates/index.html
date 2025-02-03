@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASSENGER SURVIVE PREDICTION</title>
+</head>
+<body>
+    <h1>ENTER THE DATA</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+
+    <input type="number" name="Passenger_ID" placeholder="Passenger_ID" required> <br>
+    <input type="number" name="Age" placeholder="Age" required> <br>
+    <select name="Gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+   </select><br>
+    <select name="Class" required>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="First">First</option>
+   </select> 
+   <br><br>
+   <select name="Seat_Type" required>
+    <option value="Window">Economy</option>
+    <option value="Middle">Business</option>
+    <option value="Aisle">First</option>
+    </select> 
+    <br><br>
+    <input type="number" name="Fare_Paid" placeholder="Fare_Paid" required> <br>
+    <button type="submit">Predict</button>
+    </form>
+    <p>{{ prediction_text }}</p>
+</body>
+</html>
